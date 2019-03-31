@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="yikun_common" type="path_finder" name="PathDemo" output="screen">
+    <param name="file_path" value="$(find yikun_common)/src/path_finder/path.yaml"/>
+  </node>
+</launch>

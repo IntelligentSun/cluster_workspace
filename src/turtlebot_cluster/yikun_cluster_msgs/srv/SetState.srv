@@ -1,0 +1,18 @@
+int8 UnKnown=-1
+int8 ShutDown=10
+int8 Start=11
+int8 Mapping=12
+int8 Nav=13
+int8 EmergencyStop=14
+int8 Error=15
+int8 Cancel=16
+int8 Pause=21
+int8 Executing=22
+int8 ManualControl=23
+int8 Aborted=24
+int8 Completed=25
+int8 Planning=26
+int8 Driving=27
+int8 state
+---
+bool result

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+  <!--服务节点-->
+  <node pkg="yikun_common" type="service_node" name="Service">
+    <param name="addr" value="0.0.0.0"/>
+    <param name="timesec" value="60"/>
+    <param name="global_frame_id" value="map"/>
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="sensor_frame_id" value="base_footprint"/>
+  </node>
+  <!--地图加载-->
+  <node pkg="yikun_navigation" type="map_server" name="MapServer">
+    <param name="file_name" value="$(find yikun_navigation)/current_map/map.yaml"/>
+    <param name="frame_id" value="map"/>
+  </node>
+  <!--全局定位的坐标转换-->
+  <node pkg="yikun_navigation" type="transmission" name="Transmission">
+    <param name="global_frame_id" value="map"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="base_frame_id" value="base_footprint"/>
+  </node>
+  <!--路径跟随-->
+  <node pkg="yikun_navigation" type="path_follower_node" name="PathFollower">
+    <param name="global_frame_id" value="map"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="max_vel_lin" value="0.25"/>
+    <param name="max_vel_th" value="0.5"/>
+    <remap from="/cmd_vel" to="/cmd_vel_mux/input/navi"/>
+  </node>
+</launch>

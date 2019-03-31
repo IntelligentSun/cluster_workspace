@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <!--UWB定位-->
+  <node pkg="yikun_common" type="uwb_node" name="UWBNode">
+    <param name="dev" value="/dev/ttyACM0"/>
+    <param name="global_frame" value="map"/>
+  </node>
+  <!--地图加载-->
+  <node pkg="yikun_navigation" type="map_server" name="MapServer">
+    <param name="file_name" value="$(find yikun_navigation)/current_map/map.yaml"/>
+    <param name="frame_id" value="map"/>
+  </node>
+  <!--坐标可视化-->
+  <node pkg="yikun_common" type="tf_viewer" name="TfViewer">
+  </node>
+  <!--RVIZ可视化工具-->
+  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find yikun_common)/rviz/visualization.rviz">
+  </node>
+</launch>

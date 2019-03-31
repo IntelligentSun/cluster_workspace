@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!--turtlebot bringup-->
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+
+  <!--navigation, service, apps-->
+  <include file="$(find yikun_navigation)/launch/navigation.launch"/>
+</launch>

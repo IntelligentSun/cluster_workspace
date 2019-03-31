@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>turtlebot_cluster</name>
+  <version>0.1.0</version>
+  <description>The turtlebot_cluster package</description>
+
+  <url type="repository">https://github.com/ShanSuIntelligent</url>
+  <maintainer email="sunjiayuan@sensorobots.net">sjy</maintainer>
+  <license>Apache 2.0</license>
+  <author>sunjiayuan</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>yikun_cluster_msgs</run_depend>
+  <run_depend>yikun_common</run_depend>
+  <run_depend>yikun_navigation</run_depend>
+  <export>
+    <metapackage/>
+  </export>
+</package>
